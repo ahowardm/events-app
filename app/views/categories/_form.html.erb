@@ -1,0 +1,8 @@
+<div class="container form-group">
+    <div class="row">
+    <%= form_with model: @category do |form| %>
+        <%= form.text_field :name, placeholder: 'Ingresa el nombre', class: 'form-control' %>
+        <%= form.submit 'Guardar', class: 'btn btn-success' %>
+    <% end %>
+    </div>
+</div>

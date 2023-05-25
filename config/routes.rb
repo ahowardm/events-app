@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root "categories#index"
   resources :venues
   resources :categories
+  get '/dashboard', to: 'static_pages#dashboard'
 end

@@ -1,0 +1,31 @@
+<h1>Dashboard</h1>
+
+<div class="container">
+    <div id="categories">
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <%= link_to 'Cargar', '#', class: 'btn btn-primary', id: 'cargar-ajax' %>
+    </div>
+</div>
+
+<script>
+    let btn = document.getElementById('cargar-ajax');
+    btn.addEventListener('click', event => {
+        event.preventDefault();
+        console.log('Impreso desde la función');
+        let categories = document.getElementById("categories");
+
+        fetch('/categories', {
+            headers: {
+                "X-Requested-With": "XMLHttpRequest"
+            }
+        })
+            .then(response => response.text())
+            .then(data => {
+                categories.innerHTML = data;
+            })
+    });
+</script>

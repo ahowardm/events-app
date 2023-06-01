@@ -1,4 +1,4 @@
-class VenuesController < ApplicationController
+class VenuesController < ApplicationControllers
   before_action :set_venue, only: %i[ show edit update destroy ]
 
   # GET /venues or /venues.json

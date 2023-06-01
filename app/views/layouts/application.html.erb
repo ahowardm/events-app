@@ -12,7 +12,12 @@
 
   <body>
     <%= render 'layouts/navbar' %>
-    
+
+    <div class="container">
+      <% if user_signed_in?%>
+          <p>Hola <%= current_user.email %></p>
+      <% end %>
+  </div>
     <% if alert %>
       <div class="alert alert-danger" role="alert">
         <%= alert %>
